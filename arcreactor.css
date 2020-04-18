@@ -4,18 +4,40 @@ body{
 .page-container{
     width: 100vw;
     height: 100vh;
-    background: radial-gradient(#353c44, #222931);
+    background-image: url(images/iron-man-wallpaper-3.jpg);
+    background-position: center;
+    background-size: cover;
     display: flex;
     
 }
+.page-container img{
+    height: 80vh;
+    width: 40vh;
+    opacity: 50%;
+    justify-content: center;
+    align-content: center;
+
+}
 .reactor-container{
-    width: 300px;
-    height: 300px;
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    border-radius: 50%;
+    background-color: #384c50;
+    border: 1px solid rgb(97, 114, 114);
+    box-shadow: 0px 0px 32px 8px rgb(123, 221, 221), 0px 0px 4px 1px rgb(18, 20, 20) inset;
     margin: auto;
     border: 1px solid #888888;
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: 2s infinite ;
+    
+    
+}
+.reactor-container:hover{
+    transform: scale(0.6) rotate(-360deg);
+    box-shadow:  0px 0px 25px 5px #ebbebe;
     
 }
 .concentric{
@@ -23,60 +45,87 @@ body{
     position: absolute;
 }
 .innermost-core{
-    width: 150px;
-    height: 150px;
+    
+    width: 160px;
+    height: 190px;
+    
     background-image: url(images/Group\ 1.svg);
 
-    background-position: 50% 10px;
+    background-position: 50% 5px;
     background-size: 100% 100%;
     background-repeat: no-repeat;
     z-index: 3;
+    transition: ease-in 0.5s;
+
+}
+.innermost-core:hover{
+    transform: rotate(180%);
+}
+.wheel{
+    width: 50px;
+    height: 50px;
+    background-color: grey;
+    border-radius: 50%;
+    border-top: 75px solid #073c4b;
+    border-bottom: 75px solid #073c4b;
+    border-left: 75px solid rgb(77, 167, 173) ;
+    border-right: 75px solid rgb(77, 167, 173);
+    z-index : 2;
+    animation: infinite 7s linear wheelrotation;
+}
+@keyframes wheelrotation{
+    0%{
+        transform: rotate(0deg);
+    }
     
+    100%{
+        transform: rotate(-360deg);
+    }
 }
 .outer-core{
     width: 200px;
     height: 200px;
-    border: 5px solid #073c4b;
-    box-shadow: 0px 0px 10px 5px #52fefe,inset 0px 0px 2px #52fefe;
+    border: 7px dashed #61787c;
+    box-shadow: 0px 0px 7px 5px #52fefe,inset 0px 0px 3px 0px #52fefe;
     border-radius: 50%;
     z-index: 1;
 
 }
-.wheel{
-    position: absolute;
-    
-    top: calc(50% - 100px);
-    background-color: #99f7f7;
-    width: 10px;
-    height: 40px;
-    z-index: 2;
-    box-shadow: inset 2px #eeeeee,2px 0px 2px 0px #52fefe,-2px 0px 2px 0px #52fefe;
-    border-top-left-radius: 20%;
-    border-top-right-radius: 20%;
-    transform-origin: 5px 100px;
-    
-}
-.part-1{
-    transform: rotate(30deg)
 
+.core-wrapper{
+    width: 240px;
+    height: 240px;
+    z-index: 1;
+    background: #fff;
+    border: 2px solid #8adff7;
+    border-radius: 50%;
+    box-shadow: 0px 0px 7px 3px #52fefe, inset 0px 0px 7px 3px #52fefe;
 }
-.part-2{
-    transform: rotate(90deg)
 
-}
-.part-3{
-    transform: rotate(150deg)
 
-}
-.part-4{
-    transform: rotate(210deg)
-
-}
-.part-5{
-    transform: rotate(270deg)
-
-}
-.part-6{
-    transform: rotate(330deg)
-
-}
+ .tunnel{
+     width: 300px;
+     height: 300px;
+     border-radius: 50%;
+     box-shadow: 0px 0px 5px 2px #52fefe,inset 0px 0px 3px 1px #52efef;
+     background-color: #073c4b;
+     background-image: url(images/part.svg);
+     background-position: center;
+     background-position: 50% 50%;
+     animation: 6s infinite linear animateone;
+ }
+ @keyframes animateone{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+ }
+ .tunnel-groove{
+     width: 320px;
+     height: 320px;
+     border-radius: 50%;
+     background-color: rgb(22, 26, 27);
+    box-shadow: 0px 0px 4px 1px #52fefe;
+ }
